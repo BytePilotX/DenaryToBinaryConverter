@@ -2,6 +2,7 @@ package JavaDenaryConverter;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
+import java.util.Collections;
 public class main {
     public static void main(String[] args) throws InterruptedException {
         System.out.println("Please only enter numbers from 0 - 255");
@@ -41,7 +42,8 @@ public class main {
     }
 
     public static List sortarray(ArrayList unsortedArray) {
-        List sortedArray = unsortedArray.reversed();
+        ArrayList sortedArray = new ArrayList<Integer>(unsortedArray);
+        Collections.reverse(sortedArray);
         while (sortedArray.size() != 8) {
             sortedArray.add(0, 0);
         }
